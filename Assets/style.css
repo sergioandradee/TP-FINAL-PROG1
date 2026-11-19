@@ -95,7 +95,7 @@ img {
 
 /* Imagem de fundo (tag img) */
 .titulo-pagina .fundo {
-    position: absolute; /* tira a imagem do fluxo normal */
+    position: absolute;
     width: 100%;
     height: 100%;
     filter: brightness(0.45); /* escurece a imagem, como no original. Investiguei e deu certo.*/
@@ -154,8 +154,562 @@ img {
 }
 
 .item {
+    
     width: 22.5%;
     margin-bottom: 3em; /* espaço entre as filas */
+}
+.grade {
+    justify-content: flex-start;
+    column-gap: 3.33%;
+}
+
+
+/* Botões */
+.botao {
+    display: inline-block;
+    padding: 0.9em 1.8em;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    background-color: #4a90d9;
+    border: 0.1em solid #4a90d9;
+}
+
+.botao-preto {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.botao-vermelho {
+    background-color: #d13527;
+    border-color: #d13527;
+}
+
+/* Slide principal */
+.hero {
+    position: relative; /* a imagem de fundo se posiciona dentro desta seção */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 92vh; /* com o cabeçalho em cima, completa a tela e passa um pouco */
+    padding: 3em 10%;
+    text-align: center;
+    background-color: #333333; /* aparece se a imagem não carregar */
+}
+
+.hero .fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.seta {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3em;
+    margin-top: -1.5em; /* centraliza na vertical */
+    border: none;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.seta-esquerda {
+    left: 2%;
+}
+
+.seta-direita {
+    right: 2%;
+}
+
+.carrossel {
+    position: relative;
+}
+
+.carrossel .seta-esquerda {
+    left: 0;
+}
+
+.carrossel .seta-direita {
+    right: 0;
+}
+
+.hero-texto {
+    position: relative; /* fica na frente da imagem */
+    max-width: 45em;
+}
+
+.hero h1 {
+    margin-bottom: 0.4em;
+    font-size: 4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+
+.hero p {
+    max-width: 20em;      
+    margin: 0 auto 2em;   
+    font-size: 1.25rem;
+    font-weight: 200;
+    line-height: 2;
+    color: #dddddd;
+}
+
+.hero-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 2.6em;
+}
+
+/* botões do slide: maiores que os outros */
+.hero-botoes .botao {
+    padding: 0.8em 1.8em;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.destaques {
+    display: flex;
+    justify-content: space-between;
+    padding: 10em 10% 5em; /* espaço grande em cima, como no original */
+    text-align: center;
+}
+
+.destaque {
+    width: 22.5%;
+}
+
+.destaque i {
+    display: block; /* o ícone é inline, precisa de block para ter margem embaixo */
+    margin-bottom: 1em;
+    font-size: 2.2rem;
+    color: #222222;
+}
+
+.destaque h2 {
+    margin-bottom: 0.8em;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #222222;
+}
+
+.destaque p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 2;
+    color: #666666;
+}
+
+/* Sobre e "A Class Apart": metade imagem, metade texto */
+.sobre,
+.diferencial {
+    display: flex;
+}
+
+.sobre img,
+.diferencial img {
+    width: 50%;
+    min-height: 36em; /* altura mínima; se o texto crescer, a imagem acompanha */
+    object-fit: cover; /* a imagem cobre a metade sem deformar */
+}
+
+.painel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centraliza o texto na vertical */
+    align-items: flex-start; /* texto alinhado à esquerda, botão não estica */
+    width: 50%;
+    padding: 4em 5%;
+    background-color: #f3f5f9;
+}
+
+.painel h2 {
+    margin-bottom: 0.4em;
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: #222222;
+}
+
+.painel p {
+    margin-bottom: 1.5em;
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 2;
+    color: #555555;
+}
+
+.painel .subtitulo {
+    font-size: 1.3rem;
+    color: #333333;
+}
+
+/* Botão com borda escura */
+.botao-escuro {
+    background-color: transparent;
+    border-color: #222222;
+    color: #222222;
+}
+
+/* Projetos recentes (2 imagens lado a lado; depois vira carrossel com JavaScript) */
+.projetos {
+    padding: 3em 0 2em;
+    background-color: #f3f5f9;
+}
+
+.projetos h2,
+.diario h2 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-align: center;
+    color: #222222;
+}
+
+/* tracinho embaixo do título */
+.projetos hr,
+.diario hr {
+    width: 4em;
+    height: 0.15em;
+    margin: 3em auto 3.5em; /* auto nos lados centraliza */
+    border: none;
+    background-color: #222222;
+}
+
+.carrossel {
+    display: flex;
+}
+
+.carrossel a {
+    width: 50%;
+}
+
+.carrossel img {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+}
+
+/* Vídeo */
+.video {
+    padding: 3em 10% 5em;
+    text-align: center;
+    background-color: #f3f5f9; 
+}
+
+.video h2 {
+    margin-bottom: 1.5em;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #222222;
+}
+
+.video-caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 27vw;
+    margin: 0 auto;
+    background-color: #1b242b;
+}
+
+
+
+.video-caixa i {
+    font-size: 4rem;
+    color: #ffffff;
+}
+
+
+/* Diário (blog) */
+.diario {
+    padding: 3em 10% 5em;
+}
+
+.diario hr {
+    margin-bottom: 5em; /* mais espaço entre o tracinho e os posts */
+}
+
+.posts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* cada post começa no topo e tem a altura do seu conteúdo */
+}
+
+.post {
+    width: 22.5%;
+}
+
+.post img {
+    width: 100%; /* sem altura fixa: a imagem mantém a proporção original */
+}
+
+.post h3 {
+    margin: 1em 0;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333333;
+}
+
+.post-info {
+    margin-bottom: 1em;
+    font-size: 0.8rem;
+    color: #777777;
+}
+
+.resumo {
+    margin-bottom: 2em;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #888888;
+}
+
+.categorias {
+    font-size: 0.85rem;
+    color: #777777;
+}
+
+.categorias span {
+    color: #333333;
+}
+
+
+/* =========================================
+   PÁGINA DO PROJETO
+   ========================================= */
+
+/* faixa cinza com o título e as setas (sem imagem) */
+.titulo-projeto {
+    position: relative; /* as setas se posicionam dentro desta faixa */
+    display: flex;
+    justify-content: center; /* título no meio */
+    align-items: center;
+    padding: 2.2em 10%;
+    background-color: #f3f5f9;
+}
+
+.titulo-projeto h1 {
+    font-size: 1.7rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #222222;
+}
+
+/* setas e ícone de voltar aos projetos, no canto direito da faixa */
+.navegacao-projeto {
+    position: absolute;
+    right: 10%;
+    display: flex;
+    gap: 1.5em;
+    font-size: 1.1rem;
+    color: #bbbbbb;
+}
+
+/* informações na esquerda, imagens na direita */
+.projeto {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* cada coluna começa no topo */
+    padding: 5em 10%;
+}
+
+.projeto-info {
+    width: 25%;
+}
+
+.projeto-galeria {
+    width: 70%;
+}
+.invertido {
+    flex-direction: row-reverse;
+}
+
+.invertido .extra {
+    display: none;
+}
+
+.projeto-galeria img {
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.projeto-info h2 {
+    margin-bottom: 0.6em;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #222222;
+}
+
+.projeto-info p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: #666666;
+}
+
+.descricao {
+    margin-bottom: 2.2em;
+}
+
+.detalhe {
+    margin-top: 1.3em;
+}
+
+.detalhe h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #333333;
+}
+
+.detalhe p {
+    font-size: 1rem;
+}
+
+.compartilhar {
+    display: flex;
+    gap: 1.6em;
+    margin-top: 0.6em;
+    color: #222222;
+}
+
+.projeto-info .botao {
+    margin-top: 2.5em;
+}
+
+
+/* =========================================
+   PÁGINA DE CONTATO
+   ========================================= */
+
+/* imagem do topo */
+.imagem-contato img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover; /* cobre a largura toda sem deformar */
+    object-position: top; /* mostra o topo da foto (os prédios) */
+}
+
+/* título, texto de apresentação e dados */
+.contato-intro {
+    padding: 8em 10% 0; /* espaço grande entre a imagem e o título */
+    text-align: center;
+}
+
+.contato-intro h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: #222222;
+}
+
+/* tracinho cinza embaixo do título */
+.contato-intro hr {
+    width: 4em;
+    height: 0.15em;
+    margin: 3em auto 3.5em;
+    border: none;
+    background-color: #dddddd;
+}
+
+.contato-intro p {
+    max-width: 52em;
+    margin: 0 auto 5em;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 2;
+    color: #666666;
+}
+
+/* três caixas lado a lado, cada uma com um ícone */
+.dados-contato {
+    display: flex;
+    justify-content: space-between;
+}
+
+.caixa-contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32.6%;
+    height: 12.5em;
+    background-color: #f3f5f9;
+}
+
+.caixa-contato i {
+    font-size: 3rem;
+    color: #d13527;
+}
+
+/* formulário na esquerda, mapa na direita */
+.contato-corpo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5em 10% 5em;
+}
+
+.formulario,
+.escritorio {
+    width: 47%;
+}
+
+.formulario h2,
+.escritorio h2 {
+    margin-bottom: 3em;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #222222;
+}
+
+.campo {
+    margin-bottom: 1.6em;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 0.6em 1em;
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+    background-color: #f3f5f9;
+}
+
+.campo textarea {
+    height: 11em;
+}
+
+.formulario button {
+    font-family: inherit;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.mapa {
+    width: 100%;
+    height: 31em;
+    border: none;
 }
 
 
@@ -188,9 +742,6 @@ img {
     font-size: 0.85rem;
 }
 
-.coluna address {
-    font-style: normal;
-}
 
 
 /* Redes sociais (bolinhas) */
@@ -256,7 +807,7 @@ img {
     flex-direction: column;
 }
 
-.blog-lista time {
+.blog-lista p {
     margin-top: 0.4em;
     font-size: 0.7rem;
     letter-spacing: 0.1em;
